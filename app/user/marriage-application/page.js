@@ -153,7 +153,7 @@ export default function MarriageApplicationPage() {
             if (result.success) {
                 message.success(result.message);
                 form.resetFields();
-                router.push("/user/dashboard");
+                router.push(`/user/marriage-application/success?applicationId=${result.applicationId}`);
             } else {
                 message.error(result.message);
             }
@@ -201,10 +201,16 @@ export default function MarriageApplicationPage() {
                                 <Form.Item label="সম্পূর্ণ নাম" name="groomFullName" rules={[{ required: true, message: 'বরের নাম আবশ্যক' }]}>
                                     <Input placeholder="এনআইডি অনুযায়ী" className="rounded-xl p-3" />
                                 </Form.Item>
-                                <Form.Item label="এনআইডি নম্বর" name="groomNid" rules={[{ required: true, message: 'এনআইডি নম্বর আবশ্যক' }]}>
+                                <Form.Item label="এনআইডি নম্বর" name="groomNid" rules={[
+                                    { required: true, message: 'এনআইডি নম্বর আবশ্যক' },
+                                    { pattern: /^[0-9]+$/, message: 'এনআইডি শুধুমাত্র সংখ্যা হতে হবে' }
+                                ]}>
                                     <Input placeholder="এনআইডি নম্বর দিন" className="rounded-xl p-3" />
                                 </Form.Item>
-                                <Form.Item label="মোবাইল নম্বর" name="groomMobile" rules={[{ required: true, message: 'মোবাইল নম্বর আবশ্যক' }]}>
+                                <Form.Item label="মোবাইল নম্বর" name="groomMobile" rules={[
+                                    { required: true, message: 'মোবাইল নম্বর আবশ্যক' },
+                                    { pattern: /^[0-9]+$/, message: 'মোবাইল শুধুমাত্র সংখ্যা হতে হবে' }
+                                ]}>
                                     <Input placeholder="মোবাইল নম্বর দিন" className="rounded-xl p-3" />
                                 </Form.Item>
                                 <Form.Item label="পিতার নাম" name="groomFatherName" rules={[{ required: true, message: 'পিতার নাম আবশ্যক' }]}>
@@ -247,10 +253,16 @@ export default function MarriageApplicationPage() {
                                 <Form.Item label="সম্পূর্ণ নাম" name="brideFullName" rules={[{ required: true, message: 'কনের নাম আবশ্যক' }]}>
                                     <Input placeholder="এনআইডি অনুযায়ী" className="rounded-xl p-3" />
                                 </Form.Item>
-                                <Form.Item label="এনআইডি নম্বর" name="brideNid" rules={[{ required: true, message: 'এনআইডি নম্বর আবশ্যক' }]}>
+                                <Form.Item label="এনআইডি নম্বর" name="brideNid" rules={[
+                                    { required: true, message: 'এনআইডি নম্বর আবশ্যক' },
+                                    { pattern: /^[0-9]+$/, message: 'এনআইডি শুধুমাত্র সংখ্যা হতে হবে' }
+                                ]}>
                                     <Input placeholder="এনআইডি নম্বর দিন" className="rounded-xl p-3" />
                                 </Form.Item>
-                                <Form.Item label="মোবাইল নম্বর" name="brideMobile" rules={[{ required: true, message: 'মোবাইল নম্বর আবশ্যক' }]}>
+                                <Form.Item label="মোবাইল নম্বর" name="brideMobile" rules={[
+                                    { required: true, message: 'মোবাইল নম্বর আবশ্যক' },
+                                    { pattern: /^[0-9]+$/, message: 'মোবাইল শুধুমাত্র সংখ্যা হতে হবে' }
+                                ]}>
                                     <Input placeholder="মোবাইল নম্বর দিন" className="rounded-xl p-3" />
                                 </Form.Item>
                                 <Form.Item label="পিতার নাম" name="brideFatherName" rules={[{ required: true, message: 'পিতার নাম আবশ্যক' }]}>
@@ -343,7 +355,10 @@ export default function MarriageApplicationPage() {
                                             <Form.Item label="সাক্ষী ১ নাম" name="groomWitness1Name" className="flex-1" rules={[{ required: true }]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
-                                            <Form.Item label="সাক্ষী ১ এনআইডি" name="groomWitness1Nid" className="flex-1" rules={[{ required: true }]}>
+                                            <Form.Item label="সাক্ষী ১ এনআইডি" name="groomWitness1Nid" className="flex-1" rules={[
+                                                { required: true, message: 'এনআইডি আবশ্যক' },
+                                                { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                                            ]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
                                         </div>
@@ -351,7 +366,10 @@ export default function MarriageApplicationPage() {
                                             <Form.Item label="সাক্ষী ২ নাম" name="groomWitness2Name" className="flex-1" rules={[{ required: true }]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
-                                            <Form.Item label="সাক্ষী ২ এনআইডি" name="groomWitness2Nid" className="flex-1" rules={[{ required: true }]}>
+                                            <Form.Item label="সাক্ষী ২ এনআইডি" name="groomWitness2Nid" className="flex-1" rules={[
+                                                { required: true, message: 'এনআইডি আবশ্যক' },
+                                                { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                                            ]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
                                         </div>
@@ -366,7 +384,10 @@ export default function MarriageApplicationPage() {
                                             <Form.Item label="সাক্ষী ১ নাম" name="brideWitness1Name" className="flex-1" rules={[{ required: true }]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
-                                            <Form.Item label="সাক্ষী ১ এনআইডি" name="brideWitness1Nid" className="flex-1" rules={[{ required: true }]}>
+                                            <Form.Item label="সাক্ষী ১ এনআইডি" name="brideWitness1Nid" className="flex-1" rules={[
+                                                { required: true, message: 'এনআইডি আবশ্যক' },
+                                                { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                                            ]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
                                         </div>
@@ -374,7 +395,10 @@ export default function MarriageApplicationPage() {
                                             <Form.Item label="সাক্ষী ২ নাম" name="brideWitness2Name" className="flex-1" rules={[{ required: true }]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
-                                            <Form.Item label="সাক্ষী ২ এনআইডি" name="brideWitness2Nid" className="flex-1" rules={[{ required: true }]}>
+                                            <Form.Item label="সাক্ষী ২ এনআইডি" name="brideWitness2Nid" className="flex-1" rules={[
+                                                { required: true, message: 'এনআইডি আবশ্যক' },
+                                                { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                                            ]}>
                                                 <Input className="rounded-xl p-3" />
                                             </Form.Item>
                                         </div>

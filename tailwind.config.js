@@ -4,9 +4,11 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                background: "var(--background)",
-                foreground: "var(--foreground)",
-                primary: "#9E2953",
+                background: "#f8fafc",
+                text: "#1e293b",
+                primary: "#2563eb",
+                secondary: "#1e40af",
+                accent: "#22c55e",
             },
         },
     },

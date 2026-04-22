@@ -125,7 +125,7 @@ export default function DivorceApplicationPage() {
       const result = await submitDivorceApplication(values);
       if (result.success) {
         message.success(result.message);
-        router.push("/user/dashboard");
+        router.push(`/user/divorce-application/success?applicationId=${result.applicationId}`);
       } else {
         message.error(result.message);
       }
@@ -174,7 +174,10 @@ export default function DivorceApplicationPage() {
                 <Form.Item label="সম্পূর্ণ নাম" name="husbandFullName" rules={[{ required: true }]}>
                   <Input placeholder="এনআইডি অনুযায়ী" className="rounded-xl p-3" />
                 </Form.Item>
-                <Form.Item label="এনআইডি নম্বর" name="husbandNid" rules={[{ required: true }]}>
+                <Form.Item label="এনআইডি নম্বর" name="husbandNid" rules={[
+                    { required: true, message: 'এনআইডি আবশ্যক' },
+                    { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                ]}>
                   <Input placeholder="এনআইডি নম্বর" className="rounded-xl p-3" />
                 </Form.Item>
                 <Form.Item label="পিতার নাম" name="husbandFatherName" rules={[{ required: true }]}>
@@ -201,7 +204,10 @@ export default function DivorceApplicationPage() {
                 <Form.Item label="সম্পূর্ণ নাম" name="wifeFullName" rules={[{ required: true }]}>
                   <Input placeholder="এনআইডি অনুযায়ী" className="rounded-xl p-3" />
                 </Form.Item>
-                <Form.Item label="এনআইডি নম্বর" name="wifeNid" rules={[{ required: true }]}>
+                <Form.Item label="এনআইডি নম্বর" name="wifeNid" rules={[
+                    { required: true, message: 'এনআইডি আবশ্যক' },
+                    { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                ]}>
                   <Input placeholder="এনআইডি নম্বর" className="rounded-xl p-3" />
                 </Form.Item>
                 <Form.Item label="পিতার নাম" name="wifeFatherName" rules={[{ required: true }]}>
@@ -250,7 +256,10 @@ export default function DivorceApplicationPage() {
                   <Form.Item label="সাক্ষী ১ নাম" name="witness1Name" rules={[{ required: true }]}>
                     <Input className="rounded-xl p-3" />
                   </Form.Item>
-                  <Form.Item label="সাক্ষী ১ এনআইডি" name="witness1Nid" rules={[{ required: true }]}>
+                  <Form.Item label="সাক্ষী ১ এনআইডি" name="witness1Nid" rules={[
+                      { required: true, message: 'এনআইডি আবশ্যক' },
+                      { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                  ]}>
                     <Input className="rounded-xl p-3" />
                   </Form.Item>
                 </div>
@@ -258,7 +267,10 @@ export default function DivorceApplicationPage() {
                   <Form.Item label="সাক্ষী ২ নাম" name="witness2Name" rules={[{ required: true }]}>
                     <Input className="rounded-xl p-3" />
                   </Form.Item>
-                  <Form.Item label="সাক্ষী ২ এনআইডি" name="witness2Nid" rules={[{ required: true }]}>
+                  <Form.Item label="সাক্ষী ২ এনআইডি" name="witness2Nid" rules={[
+                      { required: true, message: 'এনআইডি আবশ্যক' },
+                      { pattern: /^[0-9]+$/, message: 'শুধুমাত্র সংখ্যা' }
+                  ]}>
                     <Input className="rounded-xl p-3" />
                   </Form.Item>
                 </div>

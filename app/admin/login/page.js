@@ -5,9 +5,11 @@ import { Form, message } from "antd";
 import FormItem from "antd/es/form/FormItem";
 import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function AdminLoginPage() {
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (values) => {
         setLoading(true);
@@ -47,11 +49,20 @@ export default function AdminLoginPage() {
                         name="password" 
                         rules={[{ required: true, message: "Please input admin password" }]}
                     >
-                        <input 
-                            type="password"
-                            placeholder="Enter password" 
-                            className="w-full outline-none p-4 border border-gray-200 rounded-xl focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300" 
-                        />
+                        <div className="relative">
+                            <input 
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Enter password" 
+                                className="w-full outline-none p-4 pr-12 border border-gray-200 rounded-xl focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300" 
+                            />
+                            <button 
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
+                            >
+                                {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+                            </button>
+                        </div>
                     </FormItem>
 
                     <button 

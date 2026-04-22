@@ -44,7 +44,7 @@ export async function submitDivorceApplication(values) {
         }
 
         // 4. Create Application
-        await prisma.divorceApplication.create({
+        const newApplication = await prisma.divorceApplication.create({
             data: {
                 userId,
                 kajiId: values.kajiId,
@@ -70,7 +70,7 @@ export async function submitDivorceApplication(values) {
         });
 
         revalidatePath("/user/dashboard");
-        return { success: true, message: "তালাকনামা আবেদন সফলভাবে জমা দেওয়া হয়েছে!" };
+        return { success: true, message: "তালাকনামা আবেদন সফলভাবে জমা দেওয়া হয়েছে!", applicationId: newApplication.id };
 
     } catch (error) {
         console.error("Submit Divorce Application Error:", error);

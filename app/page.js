@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import Services from "@/components/home/Services";
 import Link from "next/link";
 import { FaClipboard, FaEye, FaFile, FaTransgender, FaUser, FaUserCheck } from "react-icons/fa";
 
@@ -75,6 +76,8 @@ async function HomePage() {
         </div>
       </section>
 
+
+
       {/* Stats Bar */}
       <section className="bg-white py-12 px-4 sm:px-6 lg:px-8 shadow-sm relative z-20 -mt-8 mx-4 md:mx-auto max-w-6xl rounded-2xl border border-gray-100">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 px-4 md:px-12">
@@ -92,6 +95,10 @@ async function HomePage() {
         </div>
       </section>
 
+
+      {/* Services */}
+      <Services />
+
       {/* How It Works */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -100,11 +107,11 @@ async function HomePage() {
             <h3 className="text-4xl font-extrabold text-gray-900">কিভাবে কাজ করে?</h3>
             <div className="h-1 w-20 bg-primary mx-auto mt-6 rounded-full"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
             {/* Connecting Line for MD screens */}
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-y-1/2 z-0"></div>
-            
+
             {howItWorks.map((step, idx) => (
               <div key={idx} className="bg-white shadow-xl shadow-primary/5 rounded-2xl p-8 relative group hover:-translate-y-2 transition-transform duration-300 z-10 border border-gray-100">
                 <div className="absolute -top-5 left-1/2 -translate-x-1/2 h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shadow-lg">

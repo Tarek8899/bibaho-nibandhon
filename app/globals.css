@@ -7,10 +7,10 @@ body {
 }
 @layer utilities {
     .text-link {
-        @apply p-2 relative text-black before:absolute before:h-[1px] before:bg-black before:w-0 before:left-1/2 before:bottom-0 before:hover:w-full before:hover:left-0 before:duration-300;
+        @apply p-2 relative text-text before:absolute before:h-[1px] before:bg-primary before:w-0 before:left-1/2 before:bottom-0 before:hover:w-full before:hover:left-0 before:duration-300;
     }
     .hover-effect {
-        @apply hover:text-white hover:bg-blue-600;
+        @apply hover:text-white hover:bg-primary;
     }
 }
 .container {

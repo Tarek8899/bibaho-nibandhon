@@ -8,7 +8,7 @@ import FormItem from "antd/es/form/FormItem";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { FaCamera } from "react-icons/fa";
+import { FaCamera, FaEye, FaEyeSlash } from "react-icons/fa";
 
 const { Option } = Select;
 
@@ -17,6 +17,7 @@ const BD_API_BASE = "https://bdapis.com/api/v1.2";
 export default function KajiRegisterForm() {
   const { postData, loading } = usePost();
   const [form] = Form.useForm();
+  const [showPassword, setShowPassword] = useState(false);
 
   // State for location data
   const [divisions, setDivisions] = useState([]);
@@ -160,7 +161,10 @@ export default function KajiRegisterForm() {
               <label htmlFor="phone" className="mb-2 text-sm font-bold text-gray-700">
                 ফোন নম্বর
               </label>
-              <FormItem name="phone" rules={[{ required: true, message: "অনুগ্রহ করে আপনার ফোন নম্বর লিখুন" }]}>
+              <FormItem name="phone" rules={[
+                { required: true, message: "অনুগ্রহ করে আপনার ফোন নম্বর লিখুন" },
+                { pattern: /^[0-9]+$/, message: "ফোন নম্বর শুধুমাত্র সংখ্যা হতে হবে" }
+              ]}>
                 <input
                   type="text"
                   id="phone"
@@ -175,7 +179,10 @@ export default function KajiRegisterForm() {
               <label htmlFor="nid" className="mb-2 text-sm font-bold text-gray-700">
                 জাতীয় পরিচয়পত্র নম্বর (NID)
               </label>
-              <FormItem name="nid" rules={[{ required: true, message: "অনুগ্রহ করে আপনার NID নম্বর লিখুন" }]}>
+              <FormItem name="nid" rules={[
+                { required: true, message: "অনুগ্রহ করে আপনার NID নম্বর লিখুন" },
+                { pattern: /^[0-9]+$/, message: "NID নম্বর শুধুমাত্র সংখ্যা হতে হবে" }
+              ]}>
                 <input
                   type="text"
                   id="nid"
@@ -323,12 +330,21 @@ export default function KajiRegisterForm() {
               পাসওয়ার্ড নির্ধারণ করুন
             </label>
             <FormItem name="password" rules={[{ required: true, message: "অনুগ্রহ করে আপনার পাসওয়ার্ড লিখুন" }]}>
-              <input
-                type="password"
-                id="password"
-                placeholder="কমপক্ষে ৬ অক্ষরের শক্তিশালী পাসওয়ার্ড"
-                className="w-full outline-none p-4 bg-gray-50/50 border border-gray-100 rounded-2xl focus:border-primary focus:ring-4 focus:ring-primary/5 focus:bg-white transition-all duration-300"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  placeholder="কমপক্ষে ৬ অক্ষরের শক্তিশালী পাসওয়ার্ড"
+                  className="w-full outline-none p-4 pr-12 bg-gray-50/50 border border-gray-100 rounded-2xl focus:border-primary focus:ring-4 focus:ring-primary/5 focus:bg-white transition-all duration-300"
+                />
+                <button 
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
+                >
+                    {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+                </button>
+              </div>
             </FormItem>
           </div>
         </div>

@@ -5,9 +5,11 @@ import { Form, message } from "antd";
 import FormItem from "antd/es/form/FormItem";
 import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function KajiLoginForm() {
     const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleSubmit = async (values) => {
         setLoading(true);
@@ -31,7 +33,10 @@ export default function KajiLoginForm() {
                     </label>
                     <FormItem 
                         name="nid" 
-                        rules={[{ required: true, message: "অনুগ্রহ করে আপনার এনআইডি নম্বর লিখুন" }]}
+                        rules={[
+                            { required: true, message: "অনুগ্রহ করে আপনার এনআইডি নম্বর লিখুন" },
+                            { pattern: /^[0-9]+$/, message: "এনআইডি নম্বর শুধুমাত্র সংখ্যা হতে হবে" }
+                        ]}
                     >
                         <input 
                             type="text" 
@@ -49,12 +54,21 @@ export default function KajiLoginForm() {
                         name="password" 
                         rules={[{ required: true, message: "অনুগ্রহ করে আপনার পাসওয়ার্ড লিখুন" }]}
                     >
-                        <input 
-                            type="password" 
-                            id="password" 
-                            placeholder="পাসওয়ার্ড"
-                            className="w-full outline-none p-4 border border-gray-200 rounded-xl focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300" 
-                        />
+                        <div className="relative">
+                            <input 
+                                type={showPassword ? "text" : "password"} 
+                                id="password" 
+                                placeholder="পাসওয়ার্ড"
+                                className="w-full outline-none p-4 pr-12 border border-gray-200 rounded-xl focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300" 
+                            />
+                            <button 
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
+                            >
+                                {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+                            </button>
+                        </div>
                     </FormItem>
                 </div>
                 <button 

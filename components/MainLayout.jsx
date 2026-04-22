@@ -11,13 +11,13 @@ function MainLayout({ children }) {
     pathname.startsWith("/admin/dashboard") || 
     pathname.startsWith("/kaji/dashboard") || 
     pathname.startsWith("/user/dashboard");
-  return (
-    <div>
-      {!isDashboardRoute && <Header />}
-      {children}
-      {!isDashboardRoute && <Footer />}
-    </div>
-  );
+    return (
+      <div>
+        {!isDashboardRoute && <div className="print:hidden"><Header /></div>}
+        {children}
+        {!isDashboardRoute && <div className="print:hidden"><Footer /></div>}
+      </div>
+    );
 }
 
 export default MainLayout;

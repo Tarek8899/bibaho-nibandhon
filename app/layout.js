@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         <SwrProvider>
           <StoreProvider>
             <AntdRegistry>
-              <body className={plus_jakarta_sans.className}>
+              <body className={`${plus_jakarta_sans.className} bg-background text-text`}>
                 <MainLayout>
                   <NextTopLoader showSpinner={false} color="rgb(37 99 235)" />
                   {children}

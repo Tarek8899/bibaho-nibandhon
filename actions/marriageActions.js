@@ -61,7 +61,7 @@ export async function submitMarriageApplication(values) {
         }
 
         // 5. Create Application
-        await prisma.marriageApplication.create({
+        const newApplication = await prisma.marriageApplication.create({
             data: {
                 userId,
                 kajiId: values.kajiId,
@@ -99,7 +99,7 @@ export async function submitMarriageApplication(values) {
         });
 
         revalidatePath("/user/dashboard");
-        return { success: true, message: "বিবাহ নিবন্ধনের আবেদন সফলভাবে জমা দেওয়া হয়েছে!" };
+        return { success: true, message: "বিবাহ নিবন্ধনের আবেদন সফলভাবে জমা দেওয়া হয়েছে!", applicationId: newApplication.id };
 
     } catch (error) {
         console.error("Submit Marriage Application Error:", error);
