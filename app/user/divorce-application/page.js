@@ -105,7 +105,7 @@ export default function DivorceApplicationPage() {
     );
   }, [kajis, selectedDivision, selectedDistrict, selectedUpazila]);
 
-  useEffect(() => {
+    useEffect(() => {
     const fetchKajis = async () => {
       setLoadingKajis(true);
       const result = await getActiveKajis();
@@ -118,6 +118,15 @@ export default function DivorceApplicationPage() {
     };
     fetchKajis();
   }, []);
+
+  const onFinishFailed = (errorInfo) => {
+    const hasKajiError = errorInfo.errorFields.some(field => field.name.includes('kajiId'));
+    if (hasKajiError) {
+      message.error("কাজী/নিকাহ রেজিস্ট্রার নির্বাচন আবশ্যক! অনুগ্রহ করে ক্লিক করে একজন কাজী নির্বাচন করুন।");
+    } else {
+      message.error("অনুগ্রহ করে ফর্মের সমস্ত আবশ্যক তথ্য সঠিকভাবে পূরণ করুন।");
+    }
+  };
 
   const onFinish = async (values) => {
     setSubmitting(true);
@@ -161,7 +170,7 @@ export default function DivorceApplicationPage() {
             </p>
           </div>
 
-          <Form form={form} layout="vertical" onFinish={onFinish} requiredMark={true} className="space-y-10">
+          <Form form={form} layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed} requiredMark={true} className="space-y-10">
             {/* Husband Info */}
             <section className="bg-slate-50 p-6 rounded-2xl border border-gray-100">
               <div className="flex items-center gap-3 mb-8">

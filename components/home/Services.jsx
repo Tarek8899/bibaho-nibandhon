@@ -14,15 +14,13 @@ const Services = () => {
                     />
                     <div className="md:w-[50%] w-full bg-gray-100 dark:bg-gray-900 dark:text-gray-400 md:p-4 p-0 rounded-md">
                         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">
-                            Lorem ipsum dolor sit amet consectetur
+                            বাল্যবিবাহ নিয়ে কিছু কথা
                         </h2>
                         <p className="text-md mt-4">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
-                            placeat assumenda nam veritatis, magni doloremque pariatur quos
-                            fugit ipsa id voluptatibus deleniti officiis cum ratione eligendi
-                            sed necessitatibus aliquam error laborum delectus quaerat. Delectus
-                            hic error eligendi sed repellat natus fuga nobis tempora possimus
-                            ullam!
+                            বাংলাদেশের ৫১% শতাংশ কিশোরীর বিয়ে হয় ১৮ বছর বয়স পূর্ণ হওয়ার আগেই। বাল্যবিবাহের কারণে মাতৃমৃত্যু কিংবা শিশুমৃত্যুর ঝুঁকি অনেক বেশি হয়ে থাকে। অনেক ক্ষেত্রে নাবালিকা মেয়ে ,মা হওয়ায় কীভাবে শিশুকে পরিচর্যা করবে, সে সম্পর্কে সম্যক জ্ঞান থাকে না। এর ফলে মা ও শিশুর মৃত্যু ঘটতে পারে। বাল্যবিবাহের কারণে নারীর প্রতি সহিংসতা, মাতৃমৃত্যুও ঝুঁকি, অপরিণত গর্ভধারণ, প্রসবকালীন শিশুর মৃত্যুঝুঁকি, প্রজনন স্বাস্থ্য সমস্যা, নারীশিক্ষার হার হ্রাস, স্কুল থেকে ঝরে পড়ার হার বৃদ্ধি, নারীদের অর্থনৈতিকভাবে স্বাবলম্বী হওয়ার ক্ষমতা ও সুযোগ কমে যাওয়াসহ নানা রকম নেতিবাচক প্রভাব পড়ার আশঙ্কা থাকে, বাল্য বিবাহের ফলে বিবাহ বিচ্ছেদের আশংকা তৈরী হওয়া ছাড়াও নানা পারিবারিক অশান্তি দেখা দেয়, বাল্যবিবাহ শুধু ব্যক্তিগত ক্ষতি করে না, বরং পারিবারিক, সামাজিক এবং সর্বোপরি রাষ্ট্রের ক্ষতিসাধনেও সমান অংশীদারী কওে যেমন, শিক্ষার আলো এবং স্বাস্থ্যগত কারণে অল্প বয়সের মেয়েটি তার নিজের সম্পর্কে সচেতন না হওয়া , বাল্য বিবাহের শিকার ,ছেলে ও মেয়ের শিক্ষা, স্বাস্থ্য, বিনোদনের মত মৌলিক মানবাধিকার লংঘিত হয়, যা তাঁকে তার সারাজীবনের জন্য ক্ষতিগ্রস্থ করে, এ কারণে বাল্যবিয়ের অভিশাপ থেকে রক্ষা পেতে, জাতীয় পরিচয় পত্র ( ভোটার আইডি/ জন্ম নিবন্ধন সনদ ব্যতীত কোন অবস্থাতেই নিকাহ রেজিষ্টার নয়.
+
+
+
                         </p>
                     </div>
                 </div>
@@ -31,15 +29,12 @@ const Services = () => {
                     {/*  */}
                     <div className="md:w-[50%] w-full bg-gray-100 dark:bg-gray-900 dark:text-gray-400 md:p-4 p-0 rounded-md">
                         <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">
-                            Lorem ipsum dolor sit amet consectetur
+                            বাল্য বিয়ে আর নয়
                         </h2>
                         <p className="text-md mt-4">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
-                            placeat assumenda nam veritatis, magni doloremque pariatur quos
-                            fugit ipsa id voluptatibus deleniti officiis cum ratione eligendi
-                            sed necessitatibus aliquam error laborum delectus quaerat. Delectus
-                            hic error eligendi sed repellat natus fuga nobis tempora possimus
-                            ullam!
+                            আমি চাই বাল্য বিবাহের কারনে মেয়েদের স্বাস্থ্য ঝুঁকি, শিক্ষা না পাওয়া, যৌতুকের বলি হওয়া এবং পরাধিনতার শৃক্ষখলে আর বদ্ধ না হোক । জীবনকে উপভোগ করুক নির্মল আনন্দে । নারীর ক্ষমতায়নে প্রধানতম বাধা হিসেবেও বাল্যবিবাহকে চিহ্নিত করা যায় । বাল্য বিবাহের শিকার ছেলে বা মেয়ে সে যাই হক না কেন সে তার উচ্চ শিক্ষা এমনকি কোন কোন ক্ষেত্রে শিশু শিক্ষা থেকেও বঞ্চিত হয় । ফলে শিক্ষার আলো থেকে বঞ্চিত শিশু, কিশোরী এবং কোন কোন ক্ষেত্রে কিশোররাও উন্নত জীবন ব্যবস্থা, আধুনিক প্রযুক্তিগত তথ্য প্রবাহ থেকে বঞ্চিত। তাই বাল্য বিবাহ প্রতিরোধে আমাদের সবাইকে এগিয়ে আসতে হবে।
+
+                            বিয়ে অথবা তালাক একটি ধর্মীয় কাজ প্রতিটি ধর্মগ্রন্থেই বিয়ের ব্যাপারে বলা হয়েছে , এই বিয়ে নিয়ে অনেকেই অসৎ ভাবে অসৎ উপায়ে নানা ধরনের অপকর্ম করে যাচ্ছে বিশেষ করে বাল্য বিবাহ, পরিচয় গোপন করে অন্য জায়গায় বিয়ে, বয়স গোপন রেখে বিয়ে, এই ধরনের সামাজিক অপকর্ম দিন দিন বেড়েই যাচ্ছে , তাই এই ধরনের সামাজিক অপকর্ম থেকে রক্ষা পেতে, নারী ও শিশুর মৃত্যুর হার কমাতে, নারীদের সামাজিক সম্মান বৃদ্বির লক্ষে , কন্যা শিশুদের অধিকার প্রতিষ্ঠা লক্ষে , বিয়ে ও তালাক সম্পুর্ন ডিজিটালাইজড করার লক্ষ্যে আমাদের এই প্রকল্প বিবাহ নিবন্ধন
                         </p>
                     </div>
                     {/*  */}

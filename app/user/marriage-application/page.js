@@ -120,6 +120,15 @@ export default function MarriageApplicationPage() {
         fetchKajis();
     }, []);
 
+    const onFinishFailed = (errorInfo) => {
+        const hasKajiError = errorInfo.errorFields.some(field => field.name.includes('kajiId'));
+        if (hasKajiError) {
+            message.error("কাজী নির্বাচন আবশ্যক! অনুগ্রহ করে ক্লিক করে একজন কাজী নির্বাচন করুন।");
+        } else {
+            message.error("অনুগ্রহ করে ফর্মের সমস্ত আবশ্যক তথ্য সঠিকভাবে পূরণ করুন।");
+        }
+    };
+
     const onFinish = async (values) => {
         setSubmitting(true);
         try {
@@ -186,6 +195,7 @@ export default function MarriageApplicationPage() {
                         form={form}
                         layout="vertical"
                         onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
                         requiredMark={true}
                         className="space-y-10"
                     >
